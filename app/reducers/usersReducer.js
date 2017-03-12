@@ -1,22 +1,17 @@
-// const initialState = {
-//   fetching: false,
-//   fetched: false,
-//   movies: [],
-//   error: null,
-// };
-
-export default function reducer(state={
+const initialState = {
   fetching: false,
   fetched: false,
-  movies: [],
+  users: [],
   error: null,
-}, action) => {
+};
+
+export default function reducer(state=initialState, action) {
   switch (action.type) {
     case 'FETCH_USERS_PENDING': {
       return {
         ...state,
         fetching: true
-      }
+      };
       break;
     }
     case 'FETCH_USERS_REJECTED': {
@@ -24,7 +19,7 @@ export default function reducer(state={
         ...state,
         fetching: false,
         error: action.payload
-      }
+      };
       break;
     }
     case 'FETCH_USERS_FULFILLED': {
@@ -32,9 +27,14 @@ export default function reducer(state={
         ...state,
         fetching: false,
         fetched: true,
-        movies: action.payload.data
-      }
+        users: action.payload.data
+      };
       break;
     }
-  }
+    default: {
+      return {
+        ...state
+      };
+    }
+  };
 };
