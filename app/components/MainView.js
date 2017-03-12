@@ -9,7 +9,7 @@ import { fetchUsers } from '../actions/usersActions';
 const getStoreValuesAsProps = function(store) {
   // whatever returned becomes prop in MainView
   return {
-    users: store.users
+    propName: store.usersDetails
   };
 };
 
@@ -18,10 +18,16 @@ class MainView extends Component {
     this.props.dispatch(fetchUsers());
   }
   render() {
+    const { propName } = this.props;
+
+    if (!propName.users.length) {
+      return <Text>NOTHING</Text>
+    }
+
     return <View>
-      <Text>
-        Hi
-      </Text>
+      {
+        propName.users.map(e => <Text>{e.email}</Text>)
+      }
     </View>
   }
 }
