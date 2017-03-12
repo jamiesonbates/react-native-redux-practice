@@ -26,7 +26,7 @@ class MainView extends Component {
 
     return <View>
       {
-        propName.users.map(e => <Text>{e.email}</Text>)
+        propName.users.map(e => <Text key={e.id}>{e.email}</Text>)
       }
     </View>
   }
