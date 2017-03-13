@@ -7,7 +7,8 @@ import { connect }  from 'react-redux';
 import { fetchUsers } from '../actions/usersActions';
 
 export const User = (props) => {
+  const { email } = props;
   return <Text>
-    {props.user.email}
+    { email }
   </Text>
 };

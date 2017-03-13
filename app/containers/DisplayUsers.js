@@ -26,7 +26,7 @@ class DisplayUsers extends Component {
     return <View>
       {
         propName.users.map(e => {
-          return <User key={e.id} user={e}/>
+          return <User key={e.id} {...e} />
         })
       }
     </View>
