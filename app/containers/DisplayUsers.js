@@ -4,12 +4,6 @@ import { connect }  from 'react-redux';
 import { fetchUsers } from '../actions/usersActions';
 import { User } from '../components/User';
 
-const mapStateToProps = function(store) {
-  return {
-    propName: store.usersDetails
-  };
-};
-
 class DisplayUsers extends Component {
   componentWillMount() {
     this.props.dispatch(fetchUsers());
@@ -33,4 +27,11 @@ class DisplayUsers extends Component {
   }
 }
 
-export default connect(mapStateToProps)(DisplayUsers);
+const mapStateToProps = function(store) {
+  return {
+    propName: store.usersDetails
+  };
+};
+
+export default connect(mapStateToProps, 
+  { /* pass actions to children here */ })(DisplayUsers);
