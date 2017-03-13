@@ -33,5 +33,6 @@ const mapStateToProps = function(store) {
   };
 };
 
-export default connect(mapStateToProps, 
-  { /* pass actions to children here */ })(DisplayUsers);
+// export default connect(mapStateToProps,
+//   { /* pass actions to children here */ })(DisplayUsers);
+export default connect(mapStateToProps)(DisplayUsers);
