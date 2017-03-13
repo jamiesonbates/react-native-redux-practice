@@ -10,13 +10,13 @@ import { Provider } from 'react-redux';
 import store from './app/store';
 
 import axios from 'axios';
-import MainView from './app/components/MainView';
+import  DisplayUsers from './app/containers/DisplayUsers';
 
 export default class ReduxPractice extends Component {
   render() {
     return (
       <Provider store={store}>
-        <MainView />
+        <DisplayUsers />
       </Provider>
     );
   }
