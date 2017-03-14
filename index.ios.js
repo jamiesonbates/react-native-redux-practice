@@ -9,7 +9,6 @@ import {
 import { Provider } from 'react-redux';
 import store from './app/store';
 
-import axios from 'axios';
 import  DisplayUsers from './app/containers/DisplayUsers';
 
 export default class ReduxPractice extends Component {
